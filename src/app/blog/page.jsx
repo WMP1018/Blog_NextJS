@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
     title: 'Super blog',
     description: 'Una descripcion del sitio',
@@ -15,7 +17,7 @@ export default async function Post(){
             <ul>
                 {data.map(  ({id, title, body}) => (
                     <li key={id}>
-                        <h3>{id} -- {title}</h3>
+                        <Link href={`/blog/${id}`}> <h3>{id} -- {title}</h3> </Link>
                         <p>{body}</p>
                         <br></br>
                     </li>
